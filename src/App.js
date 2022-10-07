@@ -1,10 +1,11 @@
-
-import { AppBar, Typography } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import NavBar from "./Navbar";
 
 function App() {
   return (
     <div>
-      <Typography variant="h1">Hello World!</Typography>
+      <CssBaseline />
+      <NavBar />
     </div>
   );
 }
