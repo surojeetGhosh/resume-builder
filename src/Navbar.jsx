@@ -1,8 +1,6 @@
 import {
   AppBar,
-  CssBaseline,
   Toolbar,
-  Avatar,
   Button,
   Typography,
   Grid,
@@ -12,17 +10,16 @@ import DownloadIcon from "@mui/icons-material/Download";
 
 const NavBar = () => {
   return (
-    <AppBar sx={{ border: 0 }} position="relative" color="transparent">
+    <AppBar sx={{ border: 0}} position="static" color="transparent">
       <Toolbar>
-        <Grid justifyContent="space-between" container>
+        <Grid justifyContent="space-between" alignItems={"center"} container>
           <Grid item>
-            <Avatar variant="rounded" alt="brand-image" src="Logo.png" />
+            <Typography sx={{fontFamily: 'Dancing Script, cursive', fontWeight: 'bold', display:'inline-block'}} variant="h5">Resume Builder</Typography>
           </Grid>
           <Grid item>
             <Button
-              sx={{ justifySelf: "flex-end" }}
+              sx={{backgroundColor: '#92B4EC'}}
               variant="contained"
-              color="warning"
               startIcon={<DownloadIcon />}
               size="small"
             >
