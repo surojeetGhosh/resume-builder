@@ -10,10 +10,9 @@ import Personal from "./formComponents/Personal";
 export const ResumeForm = () => {
   const [expanded, setExpanded] = useState();
 
-  const handleChange =
-    (panel) => (event, isExpanded) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
   return (
     <div>
       <Typography
@@ -23,7 +22,7 @@ export const ResumeForm = () => {
       >
         Resume PlayGround
       </Typography>
-      <Container maxWidth="lg" sx={{mt: 4}}>
+      <Container maxWidth="lg" sx={{ mt: 4 }}>
         <Accordion
           expanded={expanded === "personal"}
           onChange={handleChange("personal")}
@@ -33,7 +32,7 @@ export const ResumeForm = () => {
             id="personal-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             Personal Details
+              Personal Details
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -44,31 +43,21 @@ export const ResumeForm = () => {
           expanded={expanded === "brief"}
           onChange={handleChange("brief")}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            id="brief-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} id="brief-header">
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             Brief Description
+              Brief Description
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "skills"}
           onChange={handleChange("skills")}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            id="skills-header"
-          >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             Skills
-            </Typography>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} id="skills-header">
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>Skills</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "education"}
@@ -79,41 +68,32 @@ export const ResumeForm = () => {
             id="education-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             Education
+              Education
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "project"}
           onChange={handleChange("project")}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            id="project-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} id="project-header">
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             Project/ Certification/ Internship
+              Project/ Certification/ Internship
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "links"}
           onChange={handleChange("links")}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            id="links-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} id="links-header">
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-             web Links
+              web Links
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
       </Container>
     </div>
