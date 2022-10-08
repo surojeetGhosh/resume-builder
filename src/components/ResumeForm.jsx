@@ -5,6 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Container } from "@mui/system";
 import { useState } from "react";
+import Personal from "./formComponents/Personal";
 
 export const ResumeForm = () => {
   const [expanded, setExpanded] = useState();
@@ -36,6 +37,7 @@ export const ResumeForm = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
+            <Personal />
           </AccordionDetails>
         </Accordion>
         <Accordion
