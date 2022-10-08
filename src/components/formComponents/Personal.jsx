@@ -8,7 +8,7 @@ const Personal = (props) => {
         contact: "",
         email: ""
     });
-
+    
     const [formError, onError] = React.useState({
         fullname: false,
         degree: false,
