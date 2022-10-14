@@ -1,39 +1,12 @@
 import { TextField, Grid, Input, Avatar } from "@mui/material";
 import React from "react";
+
+
 const Personal = (props) => {
-  const [formData, onDataChange] = React.useState({
-    fullname: "",
-    degree: "",
-    contact: "",
-    email: "",
-  });
-
-  const [formError, onError] = React.useState({
-    fullname: false,
-    degree: false,
-    contact: false,
-    email: false,
-  });
-
-  const [image, onChangeImg] = React.useState(null); 
-
-  function onFormChange(e) {
-    
-    if( e.target.id === "imageFile") {
-      var file = e.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        onChangeImg(reader.result);
-      };
-    }
-    const obj = { ...formData, [e.target.id]: e.target.value };
-    onDataChange(obj);
-  }
+  
 
   return (
     <Grid container justifyContent={"center"} columnSpacing={2} rowSpacing={2}>
-      {(image !== null)? <Avatar alt="Profile-pic" src={image} />: null }
       <Grid sx={{textAlign: "center"}} item lg={12} md={12}>
         <Input
           accept="image/*"

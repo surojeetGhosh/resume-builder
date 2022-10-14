@@ -1,5 +1,11 @@
 import { Typography } from "@mui/material";
-export const Resume = () => {
+import React from "react";
+
+
+
+export const Resume = (props) => {
+  
+  
   return (
     <div>
       <Typography
@@ -9,6 +15,8 @@ export const Resume = () => {
       >
         Final View
       </Typography>
+
+      {(imageFile !== null)? <Avatar alt="Profile-pic" src={imageFile} />: null }
     </div>
   );
 };
