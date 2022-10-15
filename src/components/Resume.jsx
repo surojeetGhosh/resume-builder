@@ -1,4 +1,10 @@
-import { Typography, Avatar, Card, CardContent } from "@mui/material";
+import {
+  Typography,
+  Avatar,
+  Card,
+  CardContent,
+  Container,
+} from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
@@ -100,14 +106,11 @@ export const Resume = (props) => {
       </Card>
       <Card
         sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
-        id="Personal-Section"
+        id="description-info"
       >
         <CardContent>
           {props.formData.description !== "" ? (
-            <Typography
-              variant="body1"
-              sx={{fontSize: "0.8rem"}}
-            >
+            <Typography variant="body1" sx={{ fontSize: "0.8rem" }}>
               {props.formData.description}
             </Typography>
           ) : null}
@@ -115,7 +118,7 @@ export const Resume = (props) => {
       </Card>
       <Card
         sx={{ width: "100%", backgroundColor: "#425F57", color: "white" }}
-        id="description"
+        id="skills"
       >
         <CardContent
           sx={{
@@ -132,10 +135,10 @@ export const Resume = (props) => {
       </Card>
       <Card
         sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
-        id="Personal-Section"
+        id="skills-info"
       >
         <CardContent>
-        {props.skills.map((skill, id) => (
+          {props.skills.map((skill, id) => (
             <Typography
               variant="h6"
               sx={{
@@ -144,12 +147,77 @@ export const Resume = (props) => {
                 margin: "5px",
                 backgroundColor: "white",
                 borderRadius: "5px",
-                padding: "5px"
+                padding: "5px",
               }}
               key={id}
             >
               {skill}
             </Typography>
+          ))}
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", backgroundColor: "#425F57", color: "white" }}
+        id="institute"
+      >
+        <CardContent
+          sx={{
+            padding: "1%",
+            "&:last-child": {
+              paddingBottom: "1%",
+            },
+          }}
+        >
+          <Typography sx={{ padding: 0 }} variant="h6">
+            EDUCATION
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
+        id="institute-info"
+      >
+        <CardContent>
+          {props.education.map((ins, id) => (
+            <Container
+              sx={{
+                marginBottom: "10px",
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "5px",
+              }}
+              key={id}
+            >
+              <Typography variant="h6">{ins.name}</Typography>
+              <Typography
+                sx={{
+                  fontStyle: "italic",
+                  fontSize: "0.8rem",
+                  display: "inline-block",
+                  margin: "10px",
+                }}
+              >
+                {ins.degree}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  display: "inline-block",
+                  margin: "10px",
+                }}
+              >
+                {ins.year}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  display: "inline-block",
+                  margin: "10px",
+                }}
+              >
+                {ins.result} / 100
+              </Typography>
+            </Container>
           ))}
         </CardContent>
       </Card>

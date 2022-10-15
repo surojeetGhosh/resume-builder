@@ -8,6 +8,7 @@ import { useState } from "react";
 import Personal from "./formComponents/Personal";
 import Description from "./formComponents/Description";
 import Skills from "./formComponents/Skills";
+import Education from "./formComponents/Education";
 
 export const ResumeForm = (props) => {
   const [expanded, setExpanded] = useState();
@@ -72,7 +73,7 @@ export const ResumeForm = (props) => {
             <Typography sx={{ width: "33%", flexShrink: 0 }}>Skills</Typography>
           </AccordionSummary>
           <AccordionDetails>
-          <Skills
+            <Skills
               skills={props.skills}
               onSkillsChange={props.onSkillsChange}
             />
@@ -90,7 +91,9 @@ export const ResumeForm = (props) => {
               Education
             </Typography>
           </AccordionSummary>
-          <AccordionDetails></AccordionDetails>
+          <AccordionDetails>
+            <Education education = {props.education} onEduAdd = {props.onEduAdd}/>
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "project"}

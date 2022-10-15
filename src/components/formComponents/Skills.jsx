@@ -10,9 +10,9 @@ const Personal = (props) => {
   };
   const deleteSkill = (e) => {
     var arr = [...props.skills];
-    arr.splice(e.target.value, 1)
+    arr.splice(e.target.value, 1);
     props.onSkillsChange(arr);
-  }
+  };
   const changeSkill = (e) => {
     onSkillChange(e.target.value);
   };
@@ -32,7 +32,9 @@ const Personal = (props) => {
               key={id}
             >
               {skill}
-              <Button value={id} onClick={deleteSkill}>x</Button>
+              <Button value={id} onClick={deleteSkill}>
+                x
+              </Button>
             </Typography>
           ))}
         </Container>
@@ -45,7 +47,7 @@ const Personal = (props) => {
           required
           fullWidth
         />
-        <Container align={"center"} sx={{padding: "1%"}}>
+        <Container align={"center"} sx={{ padding: "1%" }}>
           <Fab color="primary" onClick={handleClick} size={"small"}>
             <AddIcon />
           </Fab>

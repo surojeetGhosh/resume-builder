@@ -10,10 +10,11 @@ export function Playground() {
     contact: "",
     email: "",
     address: "",
-    description: ""
+    description: "",
   });
 
   const [skills, onSkillsChange] = React.useState([]);
+  const [education, onEduAdd] = React.useState([]);
 
   const [formError, onError] = React.useState({
     fullname: false,
@@ -45,13 +46,15 @@ export function Playground() {
             onFormChange={onFormChange}
             formError={formError}
             onError={onError}
-            skills = {skills}
-            onSkillsChange = {onSkillsChange}
+            skills={skills}
+            onSkillsChange={onSkillsChange}
+            education = {education}
+            onEduAdd = {onEduAdd}
           />
         </Grid>
         <Divider orientation="vertical" flexItem sx={{ ml: "-1px" }} />
         <Grid item lg={6} md={6} sx={{ width: "100%" }}>
-          <Resume src={image} formData={formData} skills={skills}/>
+          <Resume src={image} formData={formData} skills={skills} education= {education}/>
         </Grid>
       </Grid>
     </div>
