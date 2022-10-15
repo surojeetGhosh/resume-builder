@@ -1,6 +1,7 @@
 import { Grid, Divider } from "@mui/material";
 import { ResumeForm } from "./ResumeForm";
 import { Resume } from "./Resume";
+import React from "react";
 
 export function Playground() {
   const [formData, onDataChange] = React.useState({
@@ -8,6 +9,7 @@ export function Playground() {
     degree: "",
     contact: "",
     email: "",
+    address: "",
   });
 
   const [formError, onError] = React.useState({
@@ -17,11 +19,9 @@ export function Playground() {
     email: false,
   });
 
-  const [image, onChangeImg] = React.useState(null); 
-
+  const [image, onChangeImg] = React.useState(null);
   function onFormChange(e) {
-    
-    if( e.target.id === "imageFile") {
+    if (e.target.id === "imageFile") {
       var file = e.target.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -33,16 +33,20 @@ export function Playground() {
     onDataChange(obj);
   }
 
-  const [imageFile, setImage] = React.useState(null);
   return (
     <div>
       <Grid columnSpacing={2} sx={{ mt: 1, minHeight: "1000px" }} container>
-        <Grid xs={6} item>
-          <ResumeForm formData = {formData} onFormChange = {onFormChange}  />
+        <Grid lg={6} md={6} sx={{ width: "100%" }} item>
+          <ResumeForm
+            formData={formData}
+            onFormChange={onFormChange}
+            formError={formError}
+            onError={onError}
+          />
         </Grid>
         <Divider orientation="vertical" flexItem sx={{ ml: "-1px" }} />
-        <Grid item xs={6}>
-          <Resume />
+        <Grid item lg={6} md={6} sx={{ width: "100%" }}>
+          <Resume src={image} formData={formData} />
         </Grid>
       </Grid>
     </div>

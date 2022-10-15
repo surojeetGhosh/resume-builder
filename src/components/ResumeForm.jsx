@@ -7,7 +7,7 @@ import { Container } from "@mui/system";
 import { useState } from "react";
 import Personal from "./formComponents/Personal";
 
-export const ResumeForm = () => {
+export const ResumeForm = (props) => {
   const [expanded, setExpanded] = useState();
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -36,7 +36,12 @@ export const ResumeForm = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Personal />
+            <Personal
+              formData={props.formData}
+              onFormChange={props.onFormChange}
+              formError={props.formError}
+              onError={props.onError}
+            />
           </AccordionDetails>
         </Accordion>
         <Accordion
