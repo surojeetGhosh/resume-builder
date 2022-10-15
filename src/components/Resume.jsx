@@ -113,6 +113,46 @@ export const Resume = (props) => {
           ) : null}
         </CardContent>
       </Card>
+      <Card
+        sx={{ width: "100%", backgroundColor: "#425F57", color: "white" }}
+        id="description"
+      >
+        <CardContent
+          sx={{
+            padding: "1%",
+            "&:last-child": {
+              paddingBottom: "1%",
+            },
+          }}
+        >
+          <Typography sx={{ padding: 0 }} variant="h6">
+            KEY SKILLS
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
+        id="Personal-Section"
+      >
+        <CardContent>
+        {props.skills.map((skill, id) => (
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: "0.8rem",
+                display: "inline-block",
+                margin: "5px",
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "5px"
+              }}
+              key={id}
+            >
+              {skill}
+            </Typography>
+          ))}
+        </CardContent>
+      </Card>
     </div>
   );
 };

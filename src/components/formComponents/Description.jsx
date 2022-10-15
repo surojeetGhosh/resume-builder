@@ -1,4 +1,4 @@
-import { TextField, Grid} from "@mui/material";
+import { TextField, Grid } from "@mui/material";
 import React from "react";
 
 const Personal = (props) => {
