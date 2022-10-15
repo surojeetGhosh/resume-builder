@@ -221,6 +221,92 @@ export const Resume = (props) => {
           ))}
         </CardContent>
       </Card>
+      <Card
+        sx={{ width: "100%", backgroundColor: "#425F57", color: "white" }}
+        id="project"
+      >
+        <CardContent
+          sx={{
+            padding: "1%",
+            "&:last-child": {
+              paddingBottom: "1%",
+            },
+          }}
+        >
+          <Typography sx={{ padding: 0 }} variant="h6">
+            PROJECT/ CERTIFICATION/ INTERNSHIP
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
+        id="project-info"
+      >
+        <CardContent>
+          {props.project.map((ins, id) => (
+            <Container
+              sx={{
+                marginBottom: "10px",
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "5px",
+              }}
+              key={id}
+            >
+              <Typography variant="h6">{ins.type}</Typography>
+              <Typography
+                sx={{
+                  fontWeight: "900",
+                  fontSize: "1rem",
+                  margin: "10px",
+                }}
+              >
+                {ins.title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  margin: "10px",
+                }}
+              >
+                <span style={{ fontWeight: "900" }}>Certificate No.:</span>{" "}
+                {ins.certno}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  margin: "10px",
+                }}
+              >
+                {ins.desc}
+              </Typography>
+            </Container>
+          ))}
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", backgroundColor: "#425F57", color: "white" }}
+        id="web-link"
+      >
+        <CardContent
+          sx={{
+            padding: "1%",
+            "&:last-child": {
+              paddingBottom: "1%",
+            },
+          }}
+        >
+          <Typography sx={{ padding: 0 }} variant="h6">
+            WEB LINK
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card
+        sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
+        id="web-link-info"
+      >
+        <CardContent></CardContent>
+      </Card>
     </div>
   );
 };

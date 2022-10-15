@@ -9,6 +9,7 @@ import Personal from "./formComponents/Personal";
 import Description from "./formComponents/Description";
 import Skills from "./formComponents/Skills";
 import Education from "./formComponents/Education";
+import Project from "./formComponents/Project";
 
 export const ResumeForm = (props) => {
   const [expanded, setExpanded] = useState();
@@ -104,7 +105,9 @@ export const ResumeForm = (props) => {
               Project/ Certification/ Internship
             </Typography>
           </AccordionSummary>
-          <AccordionDetails></AccordionDetails>
+          <AccordionDetails>
+            <Project project={props.project} onProjAdd = {props.onProjAdd}/>
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "links"}
