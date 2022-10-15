@@ -305,7 +305,39 @@ export const Resume = (props) => {
         sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
         id="web-link-info"
       >
-        <CardContent></CardContent>
+        <CardContent>
+          {props.webL.map((ins, id) => (
+            <Container
+              sx={{
+                marginBottom: "10px",
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "5px",
+              }}
+              key={id}
+            >
+              <Typography
+                sx={{
+                  fontWeight: "900",
+                  fontSize: "0.8rem",
+                  display: "inline-block",
+                  margin: "10px",
+                }}
+              >
+                {ins.type}:
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  display: "inline-block",
+                  margin: "10px",
+                }}
+              >
+                {ins.link}
+              </Typography>
+            </Container>
+          ))}
+        </CardContent>
       </Card>
     </div>
   );

@@ -16,6 +16,7 @@ export function Playground() {
   const [skills, onSkillsChange] = React.useState([]);
   const [education, onEduAdd] = React.useState([]);
   const [project, onProjAdd] = React.useState([]);
+  const [webL, onLinkAdd] = React.useState([]);
 
   const [formError, onError] = React.useState({
     fullname: false,
@@ -49,15 +50,24 @@ export function Playground() {
             onError={onError}
             skills={skills}
             onSkillsChange={onSkillsChange}
-            education = {education}
-            onEduAdd = {onEduAdd}
-            project = {project}
-            onProjAdd = {onProjAdd}
+            education={education}
+            onEduAdd={onEduAdd}
+            project={project}
+            onProjAdd={onProjAdd}
+            webL={webL}
+            onLinkAdd={onLinkAdd}
           />
         </Grid>
         <Divider orientation="vertical" flexItem sx={{ ml: "-1px" }} />
         <Grid item lg={6} md={6} sx={{ width: "100%" }}>
-          <Resume src={image} formData={formData} skills={skills} education= {education} project={project}/>
+          <Resume
+            src={image}
+            formData={formData}
+            skills={skills}
+            education={education}
+            project={project}
+            webL={webL}
+          />
         </Grid>
       </Grid>
     </div>

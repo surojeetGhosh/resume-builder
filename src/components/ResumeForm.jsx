@@ -10,6 +10,7 @@ import Description from "./formComponents/Description";
 import Skills from "./formComponents/Skills";
 import Education from "./formComponents/Education";
 import Project from "./formComponents/Project";
+import WebLinks from "./formComponents/WebLinks";
 
 export const ResumeForm = (props) => {
   const [expanded, setExpanded] = useState();
@@ -118,7 +119,9 @@ export const ResumeForm = (props) => {
               web Links
             </Typography>
           </AccordionSummary>
-          <AccordionDetails></AccordionDetails>
+          <AccordionDetails>
+            <WebLinks webL = {props.webL} onLinkAdd = {props.onLinkAdd}/>
+          </AccordionDetails>
         </Accordion>
       </Container>
     </div>
