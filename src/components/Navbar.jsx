@@ -1,22 +1,8 @@
 import { AppBar, Toolbar, Button, Typography, Grid } from "@mui/material";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import DownloadIcon from "@mui/icons-material/Download";
+import ReactToPrint from "react-to-print";
 
 const NavBar = () => {
-  async function printDocument() {
-    const element = document.getElementById("divToPrint");
-    const canvas = await html2canvas(element);
-    const data = canvas.toDataURL("image/png");
-
-    const pdf = new jsPDF();
-    const imgProperties = pdf.getImageProperties(data);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-
-    pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
-    pdf.save("print.pdf");
-  }
   return (
     <AppBar sx={{ border: 0 }} position="static" color="transparent">
       <Toolbar>
@@ -34,15 +20,21 @@ const NavBar = () => {
             </Typography>
           </Grid>
           <Grid item>
-            <Button
-              sx={{ backgroundColor: "#92B4EC" }}
-              variant="contained"
-              startIcon={<DownloadIcon />}
-              size="small"
-              onClick={printDocument}
-            >
-              <Typography variant="button">Resume</Typography>
-            </Button>
+            <ReactToPrint
+              trigger={ () =>
+                <Button
+                  sx={{ backgroundColor: "#92B4EC" }}
+                  variant="contained"
+                  startIcon={<DownloadIcon />}
+                  size="small"
+                >
+                  <Typography variant="button">Resume</Typography>
+                </Button>
+              }
+              content = {
+                () => document.getElementById('divToPrint')
+              }
+            />
           </Grid>
         </Grid>
       </Toolbar>
