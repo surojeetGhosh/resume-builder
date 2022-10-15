@@ -10,6 +10,8 @@ export function Playground() {
     contact: "",
     email: "",
     address: "",
+    description: "",
+    skills: []
   });
 
   const [formError, onError] = React.useState({

@@ -6,6 +6,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Container } from "@mui/system";
 import { useState } from "react";
 import Personal from "./formComponents/Personal";
+import Description from "./formComponents/Description";
 
 export const ResumeForm = (props) => {
   const [expanded, setExpanded] = useState();
@@ -53,7 +54,12 @@ export const ResumeForm = (props) => {
               Brief Description
             </Typography>
           </AccordionSummary>
-          <AccordionDetails></AccordionDetails>
+          <AccordionDetails>
+            <Description formData={props.formData}
+              onFormChange={props.onFormChange}
+              formError={props.formError}
+              onError={props.onError}/>
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "skills"}

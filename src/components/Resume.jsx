@@ -98,6 +98,21 @@ export const Resume = (props) => {
           </Typography>
         </CardContent>
       </Card>
+      <Card
+        sx={{ width: "100%", marginBottom: "10px", backgroundColor: "#F5EFE6" }}
+        id="Personal-Section"
+      >
+        <CardContent>
+          {props.formData.description !== "" ? (
+            <Typography
+              variant="body1"
+              sx={{fontSize: "0.8rem"}}
+            >
+              {props.formData.description}
+            </Typography>
+          ) : null}
+        </CardContent>
+      </Card>
     </div>
   );
 };
