@@ -21,7 +21,7 @@ const NavBar = () => {
           </Grid>
           <Grid item>
             <ReactToPrint
-              trigger={ () =>
+              trigger={() => (
                 <Button
                   sx={{ backgroundColor: "#92B4EC" }}
                   variant="contained"
@@ -30,10 +30,8 @@ const NavBar = () => {
                 >
                   <Typography variant="button">Resume</Typography>
                 </Button>
-              }
-              content = {
-                () => document.getElementById('divToPrint')
-              }
+              )}
+              content={() => document.getElementById("divToPrint")}
             />
           </Grid>
         </Grid>
